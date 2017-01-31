@@ -33,6 +33,9 @@ function create() {
     //player's body
     body = game.add.group();
 
+    //player blink ////500 = 1/2 second; 2000 = 2 seconds
+    game.add.tween(player).to({alpha: 0}, 250, Phaser.Easing.Linear.None, true, 1, -1, true);  //alpha to go to, time in ms,easing curve, auto start, ms befor start, how many loops -1=infinite, yoyo
+
     //Axis lines
     var aux = 0;
     var graphics = game.add.graphics( 0, 0);
@@ -79,7 +82,7 @@ function update() {
     switch (direc){
 
         case 'right':
-            player.x += 50;
+            //player.x += 50;
             break;
 
         case 'left':
